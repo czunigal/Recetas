@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas de Comida Chilena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-image: url('https://example.com/banner.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #900C3F;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FFD700;
+        }
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-container input {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            outline: none;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .recipe {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .recipe.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .recipe img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .recipe h2 {
+            font-size: 1.8rem;
+            margin: 15px 0;
+            color: #900C3F;
+        }
+        .recipe p {
+            font-size: 1rem;
+        }
+        .recipe ul {
+            list-style-type: circle;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #900C3F;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media(min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media(min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recetas de Comida Chilena</h1>
+        <p>Explora los sabores más auténticos de Chile</p>
+    </header>
+
+    <nav>
+        <a href="#empanadas">Empanadas</a>
+        <a href="#curanto">Curanto</a>
+        <a href="#pastel-choclo">Pastel de Choclo</a>
+        <a href="#caldillo-congrio">Caldillo de Congrio</a>
+        <a href="#cazuela">Cazuela</a>
+        <a href="#sopaipillas">Sopaipillas</a>
+        <a href="#porotos">Porotos Granados</a>
+        <a href="#chacarero">Chacarero</a>
+        <a href="#asado">Asado a la Parrilla</a>
+        <a href="#tres-leches">Torta Tres Leches</a>
+    </nav>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar receta...">
+    </div>
+
+    <div class="container" id="recipe-list">
+        <!-- Aquí van las recetas -->
+
+        <div class="recipe" id="empanadas">
+            <img src="https://example.com/empanadas.jpg" alt="Empanadas Chilenas">
+            <h2>Empanadas Chilenas</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>500g de harina</li>
+                <li>250g de carne molida</li>
+                <li>1 cebolla picada</li>
+                <li>3 huevos cocidos</li>
+                <li>Pasas y aceitunas</li>
+                <li>Sal y especias</li>
+            </ul>
+            <p>Preparación: Mezcla la harina con agua y sal, y amasa. Prepara el pino con la carne, cebolla y especias. Rellena las empanadas con el pino, huevo, pasas y aceitunas. Hornea a 180°C por 20 minutos.</p>
+        </div>
+
+        <div class="recipe" id="curanto">
+            <img src="https://example.com/curanto.jpg" alt="Curanto Chileno">
+            <h2>Curanto</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Mariscos (choritos, almejas)</li>
+                <li>Carnes (pollo, cerdo)</li>
+                <li>Papas y milcaos</li>
+                <li>Hojas de nalca</li>
+                <li>Vino blanco</li>
+            </ul>
+            <p>Preparación: Cocina los mariscos y las carnes en un hoyo cubierto con piedras calientes y hojas de nalca. Añade papas y milcaos. Cubre todo y deja cocinar al vapor.</p>
+        </div>
+
+        <div class="recipe" id="pastel-choclo">
+            <img src="https://example.com/pastel-choclo.jpg" alt="Pastel de Choclo">
+            <h2>Pastel de Choclo</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Choclo (maíz) molido</li>
+                <li>Carne molida</li>
+                <li>Cebolla</li>
+                <li>Huevos duros</li>
+                <li>Pasas</li>
+            </ul>
+            <p>Preparación: Prepara un pino con la carne y la cebolla. Coloca una capa de pino en una fuente y cubre con choclo molido. Añade huevo duro y pasas, y hornea hasta que esté dorado.</p>
+        </div>
+
+        <div class="recipe" id="caldillo-congrio">
+            <img src="https://example.com/caldillo-congrio.jpg" alt="Caldillo de Congrio">
+            <h2>Caldillo de Congrio</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Congrio</li>
+                <li>Papas</li>
+                <li>Tomates</li>
+                <li>Cebolla</li>
+                <li>Especias</li>
+            </ul>
+            <p>Preparación: Cocina el congrio con las papas, cebolla y tomates en caldo. Añade especias y cocina a fuego lento hasta que los sabores se mezclen.</p>
+        </div>
+
+        <div class="recipe" id="cazuela">
+            <img src="https://example.com/cazuela.jpg" alt="Cazuela Chilena">
+            <h2>Cazuela</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Carne de vacuno o pollo</li>
+                <li>Papas</li>
+                <li>Zanahorias</li>
+                <li>Choclo</li>
+                <li>Zapallo</li>
+</ul>
+            <p>Preparación: Cocina la carne en agua con las verduras. Deja hervir hasta que todo esté tierno y los sabores se mezclen. Sirve caliente.</p>
+        </div>
+
+        <div class="recipe" id="sopaipillas">
+            <img src="https://example.com/sopaipillas.jpg" alt="Sopaipillas">
+            <h2>Sopaipillas</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>300g de harina</li>
+                <li>200g de zapallo cocido</li>
+                <li>1 cucharadita de sal</li>
+                <li>Aceite para freír</li>
+            </ul>
+            <p>Preparación: Mezcla la harina con el zapallo cocido, forma la masa y estírala. Corta en círculos y fríe en aceite caliente hasta que estén doradas. Sirve con pebre o chancaca.</p>
+        </div>
+
+        <div class="recipe" id="porotos">
+            <img src="https://example.com/porotos.jpg" alt="Porotos Granados">
+            <h2>Porotos Granados</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Porotos frescos</li>
+                <li>Choclo desgranado</li>
+                <li>Zapallo</li>
+                <li>Albahaca</li>
+                <li>Cebolla</li>
+            </ul>
+            <p>Preparación: Cocina los porotos con el zapallo y la cebolla. Añade el choclo y la albahaca, y deja cocinar a fuego lento hasta que espese. Sirve caliente.</p>
+        </div>
+
+        <div class="recipe" id="chacarero">
+            <img src="https://example.com/chacarero.jpg" alt="Chacarero">
+            <h2>Chacarero</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Pan frica</li>
+                <li>Carne de vacuno en tiras</li>
+                <li>Porotos verdes cocidos</li>
+                <li>Tomate</li>
+                <li>Ají verde</li>
+            </ul>
+            <p>Preparación: Cocina la carne a la parrilla y coloca sobre el pan frica. Añade porotos verdes, tomate en rodajas y ají verde en tiras. Sirve frío o caliente.</p>
+        </div>
+
+        <div class="recipe" id="asado">
+            <img src="https://example.com/asado.jpg" alt="Asado a la Parrilla">
+            <h2>Asado a la Parrilla</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Carne de vacuno (lomo, costillar, etc.)</li>
+                <li>Sal gruesa</li>
+                <li>Aliños a gusto</li>
+            </ul>
+            <p>Preparación: Sazona la carne con sal gruesa y aliños. Cocina lentamente a la parrilla hasta que esté en el punto deseado. Sirve con ensaladas y pebre.</p>
+        </div>
+
+        <div class="recipe" id="tres-leches">
+            <img src="https://example.com/torta-tres-leches.jpg" alt="Torta Tres Leches">
+            <h2>Torta Tres Leches</h2>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>Bizcocho</li>
+                <li>Leche condensada</li>
+                <li>Leche evaporada</li>
+                <li>Crema de leche</li>
+                <li>Merengue</li>
+            </ul>
+            <p>Preparación: Baña el bizcocho en una mezcla de leche condensada, evaporada y crema. Cubre con merengue y refrigera antes de servir.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Recetas Chilenas - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Filtro de recetas
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const recipes = document.querySelectorAll('.recipe');
+            
+            recipes.forEach(recipe => {
+                const title = recipe.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    recipe.style.display = 'block';
+                } else {
+                    recipe.style.display = 'none';
+                }
+            });
+        });
+
+        // Animación al hacer scroll
+        const recipes = document.querySelectorAll('.recipe');
+        
+        function showRecipes() {
+            recipes.forEach(recipe => {
+                const recipeTop = recipe.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (recipeTop < windowHeight - 100) {
+                    recipe.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', showRecipes);
+        showRecipes(); // Para animar las recetas visibles al cargar la página
+    </script>
+</body>
+</html>
